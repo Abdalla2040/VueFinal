@@ -30,5 +30,13 @@ export default {
 </script>
 
 <style scoped>
+h2{
+    margin: 0;
+    color: blue;
+}
+p{
+    color: white;
+    font-size: 1.5em;
+}
 
 </style>

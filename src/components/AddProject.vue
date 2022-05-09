@@ -92,16 +92,12 @@ input{
     margin-left: 1rem;
 }
 .field label input{
-   
-    /* margin-left: 2rem; */
-    /* border: 0.2rem solid rgb(0, 255, 128); */
     width: 20rem;
 }
 textarea{
     margin-left: 2rem;
     width: 20.2rem;
 }
-
 
 button{
     width: 10rem;

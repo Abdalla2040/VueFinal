@@ -84,7 +84,8 @@ export default {
 <style scoped>
 
     div{
-        margin: 2rem;
+       margin-top: 0;
+        background: rgb(202, 177, 145);
     }
     .form1{
         

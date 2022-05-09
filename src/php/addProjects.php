@@ -19,8 +19,8 @@
         }
         else{
             
-        $stmt = $conn->prepare('INSERT INTO projects VALUES(?,?,?)');
-        $stmt->bind_param('iss',$id, $projectName, $projectDescription);
+        $stmt = $conn->prepare('INSERT INTO projects VALUES(?,?,?,?)');
+        $stmt->bind_param('iiss',$id, $userID, $projectName, $projectDescription);
     
         if($stmt->execute()){
             $res["status"] = "success";

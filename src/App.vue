@@ -8,7 +8,7 @@
           
           <li><router-link to="/login">Login</router-link></li>
           <li><router-link to="/signUp">Register</router-link></li>
-          <li><router-link to="/addProjects">Add Projects</router-link></li>
+          <span  v-if="auth"><li><router-link to="/addProjects">Add Projects</router-link></li></span>
           <li><router-link to="/projectList">Projects</router-link></li>
           <li><router-link to="/about">About</router-link></li>
 
@@ -20,12 +20,18 @@
 </template>
 
 <script>
+import store from '@/store/index.js'
 import footerCom from '@/components/FooterPage.vue'
 export default {
   name: 'FooterView',
-  components: {
+    computed: {
+      auth: function(){
+        return store.state.auth;
+      }
+    },
+    components: {
     footerCom
-  }
+  }, 
 }
 </script>
 
@@ -53,7 +59,6 @@ body{
 }
 
 
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -69,6 +74,7 @@ nav ul{
 }
 nav ul li{
   flex-direction: row;
+  
 }
 
 nav a {
@@ -76,21 +82,20 @@ nav a {
   color: white;
   flex-direction: column;
   width: 0.5rem;
+  text-decoration: none;
 }
 a {
+  margin-right: 2rem;
   background: rgb(154, 124, 124);
   text-transform: uppercase;
-  border-radius: 10% 10%;
+  border-radius: 0.5rem;
   padding: 0.75rem;
   
 }
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: green;
 }
 
- a.router-link-active{
-  
-} 
 a.router-link{
   background: #f80c0c;
   border: 0.2 solid blue;
@@ -99,8 +104,5 @@ a.router-link{
   margin-left: 1rem;
   height: 8rem;
 }
-
-
-
 
 </style>
